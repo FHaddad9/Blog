@@ -6,9 +6,12 @@ import javax.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 
+// Post class created for posts on the blog
+
 @Entity
 @Table
 public class Post {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,11 +20,13 @@ public class Post {
     @Column
     private String title;
     
+    // Stores the content, @Lob holds the content by a large amount of data
     @Lob
     @Column
     @NotEmpty
     private String content;
     
+    // Created and Updated for timestamps
     @Column
     private Instant createdOn;
     
