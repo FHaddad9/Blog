@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import DataTransferObject.LoginRequest;
 import DataTransferObject.RegisterRequest;
 import Model.User;
 import Repository.UserRepository;
@@ -28,5 +29,9 @@ public class AuthenticationService {
 
     private String encodePassword(String password) {
         return passwordEncoder.encode(password);
+    }
+    
+    public void login(LoginRequest loginREquest) {
+    	
     }
 }
